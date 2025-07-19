@@ -1,0 +1,254 @@
+/* Styles personnalisés pour un design ultra-professionnel et dynamique */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Fond gris très clair */
+    color: #333;
+    line-height: 1.7; /* Améliore la lisibilité */
+    overflow-x: hidden; /* Empêche le défilement horizontal indésirable */
+}
+/* Couleurs du FC Barcelone - Palette définie */
+.text-barca-blue { color: #004D98; } /* Bleu profond */
+.bg-barca-red { background-color: #A50044; } /* Rouge vibrant */
+.bg-barca-blue { background-color: #004D98; }
+.border-barca-red { border-color: #A50044; }
+.border-barca-blue { border-color: #004D98; }
+.text-barca-yellow { color: #FFC400; } /* Jaune pour le numéro 10 et accents */
+
+/* Bouton principal stylisé pour un impact maximal */
+.btn-primary {
+    @apply bg-barca-red text-white py-4 px-12 rounded-full text-xl font-bold shadow-2xl transition-all duration-400 ease-in-out hover:bg-opacity-90 hover:scale-105 transform border-4 border-barca-red hover:border-white tracking-wide;
+}
+.btn-secondary {
+    @apply bg-gray-200 text-gray-700 py-4 px-10 rounded-full text-lg font-medium shadow-lg transition-all duration-300 ease-in-out hover:bg-gray-300 hover:scale-105 transform flex items-center;
+}
+
+/* Animations de section au défilement - Plus fluides et variées */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(60px); /* Plus de mouvement initial */
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Courbe d'animation plus douce */
+}
+.section-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Animation pour les éléments spécifiques (ex: image du maillot) */
+.img-reveal {
+    opacity: 0;
+    transform: scale(0.8); /* Commence plus petit */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.img-reveal.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+/* Effet de parallaxe sur le héros (plus prononcé) */
+.hero-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: hero-zoom 30s infinite alternate ease-in-out; /* Animation de zoom subtile */
+}
+@keyframes hero-zoom {
+    0% { background-size: 110%; }
+    100% { background-size: 100%; }
+}
+
+/* Styles pour les titres H2/H3 - Police Montserrat pour l'impact */
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em; /* Légèrement plus serré pour un look moderne */
+}
+.text-gradient-barca {
+    background: linear-gradient(to right, #004D98, #A50044);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Effet de texte brillant pour le numéro 10 - Plus intense */
+.shine-text {
+    text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7);
+    animation: pulse-shine 2.5s infinite alternate ease-in-out;
+}
+@keyframes pulse-shine {
+    from { text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7); }
+    to { text-shadow: 0 0 12px rgba(255,255,255,1), 0 0 25px rgba(255,255,255,0.9); }
+}
+
+/* Animation de pulsation de bordure pour le maillot */
+@keyframes pulse-border-color {
+    0% { border-color: #A50044; }
+    50% { border-color: #004D98; }
+    100% { border-color: #A50044; }
+}
+.animate-pulse-border-color {
+    animation: pulse-border-color 4s infinite alternate ease-in-out;
+}
+
+/* Animation pour les listes de caractéristiques */
+.list-item-reveal {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.list-item-reveal.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* Délai pour chaque élément de liste */
+.list-item-reveal:nth-child(1) { transition-delay: 0.1s; }
+.list-item-reveal:nth-child(2) { transition-delay: 0.2s; }
+.list-item-reveal:nth-child(3) { transition-delay: 0.3s; }
+.list-item-reveal:nth-child(4) { transition-delay: 0.4s; }
+.list-item-reveal:nth-child(5) { transition-delay: 0.5s; }
+
+/* Animation pour les cartes d'avantages */
+.card-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.card-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-reveal:nth-child(1) { transition-delay: 0.1s; }
+.card-reveal:nth-child(2) { transition-delay: 0.2s; }
+.card-reveal:nth-child(3) { transition-delay: 0.3s; }
+.card-reveal:nth-child(4) { transition-delay: 0.4s; }
+
+/* Effet de texte de la section Lamine Yamal */
+.text-reveal-staggered p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.text-reveal-staggered.is-visible p:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.text-reveal-staggered.is-visible p:nth-child(2) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.text-reveal-staggered.is-visible p:nth-child(3) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+/* Effet de fond subtil pour le footer */
+.footer-bg-pattern {
+    background-image: linear-gradient(45deg, rgba(0,77,152,0.1) 25%, transparent 25%, transparent 75%, rgba(0,77,152,0.1) 75%, rgba(0,77,152,0.1) 100%), linear-gradient(45deg, rgba(0,77,152,0.1) 25%, transparent 25%, transparent 75%, rgba(0,77,152,0.1) 75%, rgba(0,77,152,0.1) 100%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Animations ajoutées pour la nouvelle version */
+@keyframes pulse-button {
+    0%, 100% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    50% { transform: scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+}
+.animate-pulse-button {
+    animation: pulse-button 2.5s infinite ease-in-out;
+}
+@keyframes text-pop-in {
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-text-pop-in {
+    animation: text-pop-in 1.2s ease-out forwards;
+}
+@keyframes text-fade-in {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.animate-text-fade-in {
+    animation: text-fade-in 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Delay after title animation */
+}
+
+/* Nouvelle animation pour le message d'urgence */
+@keyframes pulse-urgent-message {
+    0%, 100% { transform: scale(1); border-color: #FFC400; }
+    50% { transform: scale(1.02); border-color: #A50044; }
+}
+.animate-pulse-urgent-message {
+    animation: pulse-urgent-message 3s infinite alternate ease-in-out;
+}
+
+/* Nouvelle animation pour le texte rouge pulsant */
+@keyframes pulse-text-red {
+    0%, 100% { color: #A50044; }
+    50% { color: #FFC400; }
+}
+.animate-pulse-text-red {
+    animation: pulse-text-red 2s infinite alternate ease-in-out;
+}
+
+/* Effet de fond plus dynamique pour le héros (si l'image le permet) */
+.hero-parallax {
+    background-image: linear-gradient(45deg, rgba(0,77,152,0.8) 0%, rgba(165,0,68,0.8) 100%), url('https://placehold.co/1920x1080/003366/FFFFFF?text=Lamine+Yamal+Barca+Hero+Pattern'); /* Dégradé + image de fond */
+    background-size: 200% 200%; /* Permet l'animation de position */
+    animation: hero-background-flow 60s linear infinite alternate, hero-zoom 30s infinite alternate ease-in-out; /* Deux animations combinées */
+}
+
+/* Styles pour des sections inclinées et des séparateurs visuels */
+.section-skew-top {
+    transform: skewY(-2deg);
+    transform-origin: top left;
+    margin-top: -50px; /* Overlap with previous section */
+    padding-top: 50px; /* Compensate for skew */
+}
+
+.section-skew-bottom {
+    transform: skewY(2deg);
+    transform-origin: bottom right;
+    margin-bottom: -50px; /* Overlap with next section */
+    padding-bottom: 50px; /* Compensate for skew */
+}
+
+/* Pour que le contenu à l'intérieur des sections inclinées reste droit */
+.section-content-straight {
+    transform: skewY(2deg); /* Counter-skew for top-skewed section content */
+}
+
+.section-skew-bottom .section-content-straight {
+    transform: skewY(-2deg); /* Counter-skew for bottom-skewed section content */
+}
+
+
+/* Effet de lumière subtil sur l'image du maillot */
+.jersey-spotlight {
+    position: relative;
+    overflow: hidden; /* Ensure the spotlight doesn't spill out */
+}
+.jersey-spotlight::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%); /* Plus opaque */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: spotlight-pulse 5s infinite ease-in-out;
+    z-index: 1; /* Ensure it's above the image, but below content */
+}
+
+@keyframes spotlight-pulse {
+    0% { width: 0; height: 0; opacity: 0; }
+    25% { width: 100%; height: 100%; opacity: 1; }
+    50% { width: 120%; height: 120%; opacity: 0.8; }
+    75% { width: 100%; height: 100%; opacity: 1; }
+    100% { width: 0; height: 0; opacity: 0; }
+}
+
+/* Animation de fond pour le héros (plus complexe) */
+@keyframes hero-background-flow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+.hero-parallax {
+    background-image: linear-gradient(45deg, rgba(0,77,152,0.8) 0%, rgba(165,0,68,0.8) 100%), url('https://placehold.co/1920x1080/003366/FFFFFF?text=Lamine+Yamal+Barca+Hero+Pattern'); /* Dégradé + image de fond */
+    background-size: 200% 200%; /* Permet l'animation de position */
+    animation: hero-background-flow 60s linear infinite alternate, hero-zoom 30s infinite alternate ease-in-out; /* Deux animations combinées */
+}
+
+/* Animation pour les liens de navigation */
+.hover\:text-barca-yellow:hover {
+    color: #FFC400;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Effet de brillance au survol */
+}
